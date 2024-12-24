@@ -52,3 +52,56 @@ btn2.addEventListener("click", ()=> {
 })
 
 
+const btn3 = document.getElementById('red')
+const btn4 = document.getElementById('green')
+const btn5 = document.getElementById('blue')
+
+btn3.addEventListener("click", () => {
+    let bodyColor = window.getComputedStyle(document.body).backgroundColor
+    if (bodyColor === 'rgb(255, 0, 0)') {
+        document.body.style.backgroundColor = '';
+    } else {
+        document.body.style.backgroundColor = 'red';
+    }
+});
+
+btn4.addEventListener("click", () => {
+    let bodyColor2 = window.getComputedStyle(document.body).backgroundColor
+    if (bodyColor2 === 'rgb(0, 128, 0)') {
+        document.body.style.backgroundColor = '';
+    } else {
+        document.body.style.backgroundColor = 'green';   
+    }
+});
+btn5.addEventListener("click",() => {
+    let bodyColor3 = window.getComputedStyle(document.body).backgroundColor
+    if (bodyColor3 === 'rgb(0, 0, 255)') {
+        document.body.style.backgroundColor = '';   
+    } else {
+        document.body.style.backgroundColor = 'blue';   
+    }
+})
+
+const inputword = document.querySelector('#inputField'); 
+const outputword = document.querySelector('#outputField');
+
+
+inputword.addEventListener('input', () => {
+    outputword.textContent = inputword.value; 
+});
+
+
+const password1 = document.querySelector('#passwordinp')
+const btn6 = document.querySelector('#pasbtn')
+
+btn6.addEventListener('click', () => {
+    if (password1.type === 'password') {
+        password1.type = 'text';
+        btn6.textContent = 'yashirish';
+    } else {
+        password1.type = 'password';
+        btn6.textContent = 'koratish';
+    }
+})
+
+
