@@ -44,6 +44,14 @@ const btn1 = document.getElementById('hide')
 const btn2 = document.querySelector('.show')
 
 
+const pText = document.querySelectorAll("#paragraph3");
+
+pText.forEach((element) => {
+  element.addEventListener("click", function () {
+    element.style.fontSize = "50px";
+  });
+});
+
 btn1.addEventListener("click", ()=> {
     texts.classList.add("hidden")
 });
@@ -104,4 +112,57 @@ btn6.addEventListener('click', () => {
     }
 })
 
+const box = document.querySelector("#box");
+const moveUpButton = document.querySelector("#moveUp");
+const moveDownButton = document.querySelector("#moveDown");
+const moveLeftButton = document.querySelector("#moveLeft");
+const moveRightButton = document.querySelector("#moveRight");
 
+let verticalPosition = 0;
+let horizontalPosition = 0;
+
+moveUpButton.addEventListener("click", function () {
+  verticalPosition -= 10;
+  box.style.marginTop = `${verticalPosition}px`;
+});
+
+moveDownButton.addEventListener("click", function () {
+  verticalPosition += 10;
+  box.style.marginTop = `${verticalPosition}px`;
+});
+
+moveLeftButton.addEventListener("click", function () {
+  horizontalPosition -= 10;
+  box.style.marginLeft = `${horizontalPosition}px`;
+});
+
+moveRightButton.addEventListener("click", function () {
+  horizontalPosition += 10;
+  box.style.marginLeft = `${horizontalPosition}px`;
+});
+
+
+
+const paragraph = document.querySelectorAll("#text");
+
+paragraph.forEach((paragraph) => {
+  paragraph.addEventListener("click", function () {
+    paragraph.innerText = "salom domla";
+  });
+});
+
+const imageUrls = [
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lightailing.com%2Ffr%2Fblogs%2Fnews%2Flight-kit-for-the-magical-world-of-harry-potter-hogwarts-whomping-willow&psig=AOvVaw0Rx8zRDTelF3J2IN2U5pRs&ust=1735198313379000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODX7s-zwooDFQAAAAAdAAAAABAE",
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fforreslocal.com%2Fwizards-and-witches-encouraged-to-join-in-harry-potter-fun%2F&psig=AOvVaw0Rx8zRDTelF3J2IN2U5pRs&ust=1735198313379000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODX7s-zwooDFQAAAAAdAAAAABAJ",
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xxlmag.com%2Feminem-fack-2%2F&psig=AOvVaw2lq-r7DDw-gIPXtXl54_ak&ust=1735198391218000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCLCzvfOzwooDFQAAAAAdAAAAABAE"
+  ];
+  
+  const randomImageButton = document.getElementById("randomImageButton");
+  const randomImage = document.getElementById("randomImage");
+  
+  randomImageButton.addEventListener("click", function () {
+    const randomIndex = Math.floor(Math.random() * imageUrls.length);
+    randomImage.src = imageUrls[randomIndex];
+  });
+  
+    
